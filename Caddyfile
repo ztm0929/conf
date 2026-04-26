@@ -15,24 +15,6 @@ memos.ztm0929.cn {
     }
 }
 
-karakeep.ztm0929.cn {
-    reverse_proxy 10.1.12.17:3001
-}
-
-survey.ztm0929.cn {
-    reverse_proxy 10.1.12.17:3000  # 使用宿主机内网 IP
-
-    log {
-        output file /logs/formbricks.log {
-            roll_size 10mb
-            roll_keep 10
-            roll_keep_for 7d
-        }
-    }
-
-    encode gzip
-}
-
 wiki.ztm0929.cn {
     reverse_proxy 10.1.12.17:8080
     encode gzip zstd

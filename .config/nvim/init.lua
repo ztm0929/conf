@@ -3,6 +3,12 @@ vim.g.maplocalleader = " "
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+if vim.env.SSH_TTY then
+  local termfeatures = vim.g.termfeatures or {}
+  termfeatures.osc52 = false
+  vim.g.termfeatures = termfeatures
+end
+
 local opt = vim.opt
 
 opt.termguicolors = true
